@@ -27,6 +27,7 @@ module "asg" {
   desired_capacity          = 2
   wait_for_capacity_timeout = 0
   target_group_arns = [aws_lb_target_group.http.arn]
+  depends_on = [ module.vpc ]
 }
 
 resource "aws_security_group" "test_app" {
