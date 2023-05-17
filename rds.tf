@@ -19,8 +19,8 @@ resource "random_password" "password" {
 }
 
 resource "aws_db_subnet_group" "default" {
-  name       = "main"
-  subnet_ids = toset(module.vpc.public_subnets)
+  name       = "main1"
+  subnet_ids = toset(module.vpc.private_subnets)
 
   tags = {
     Name = "My DB subnet group"
